@@ -1,0 +1,152 @@
+/* --------------------------------필터-------------------------------- */
+#filter {
+    height: 520px;
+    background-color: #e9e4dc;
+    display: flex;
+    flex-direction: column;
+}
+#filter-box {
+    display: flex;
+    flex-direction: column;
+}
+#filter-box > div {
+    margin-bottom: 20px;
+}
+
+/* --------------------------------라면 종류-------------------------------- */
+/* 제목과 체크박스 한 줄에 */
+.container1-type {
+    display: flex; /* Set to flex container */
+    flex-direction: row; /* Arrange items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute space between items */
+  }
+/* 제목 */
+.container1-type h1 {
+  font-size: 20px;
+  line-height: 10px;
+  color: #373131;
+  margin-right: 20px;
+}
+/* 체크 박스 */
+/* 크기, 간격 */
+.row1 {
+  margin: 0px;
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 10px;
+}
+/* 간격 */
+.row1 label {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+}
+/* 체크 박스 숨기기 */
+.row1 label input[type="checkbox"] {
+  display: none;
+}
+.row1 label .icon-box1 {
+  position: relative; /* 상대 위치 지정 */
+  display: flex;  /* 플렉스 컨테이너로 설정 */
+  width: 100px;  /* 너비 */
+  padding: 15px; /* 내부 여백 */
+  flex-direction: column; /* 글자 가운데 배치 */
+  align-items: center;  /* 아이템 가운데 정렬 */
+  background-color: #f9f6f2;  /* 배경색 */
+  color: #373131;  /* 글자색 */
+  border-radius: 10px; /* 테두리 모서리 둥글게 */
+  transition: 0.5s;  /* 전환 효과 지속 시간 */
+  user-select: none;  /* 텍스트 선택 비활성화 */
+}
+ /* 선택했을 때 색상 */
+.row1 label input[type="checkbox"]:checked ~ .icon-box1 {
+  background:#e6aa50;  /* 배경색 */
+  color: #f9f6f2;  /* 글자색 */
+}
+.row1 label .icon-box1 span {
+  margin: 0px;  /* 내부 여백 */
+  font-size: 15px;  /* 폰트 크기 */
+}
+
+/* --------------------------------칼로리-------------------------------- */
+/* 길이 조절 */
+#calories {
+    width: 100%;
+}
+
+/* --------------------------------알러지 성분-------------------------------- */
+
+/* 제목 */
+.container2-allergy h1 {
+    font-size: 20px;
+    line-height: 10px;
+    color: #373131;
+    position: relative;
+  }
+  /* 체크 박스 */
+  /* 크기, 간격 */
+  .row2 {
+    margin: 0px;
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  /* 간격 */
+  .row2 label {
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+  }
+  /* 체크 박스 숨기기 */
+  .row2 label input[type="checkbox"] {
+    display: none;
+  }
+  .row2 label .icon-box2 {
+    position: relative; /* 상대 위치 지정 */
+    display: flex;  /* 플렉스 컨테이너로 설정 */
+    width: 90px;  /* 너비 */
+    padding: 10px; /* 내부 여백 */
+    flex-direction: column; /* 글자 가운데 배치 */
+    align-items: center;  /* 아이템 가운데 정렬 */
+    background-color: #f9f6f2;  /* 배경색 */
+    color: #373131;  /* 글자색 */
+    border-radius: 10px; /* 테두리 모서리 둥글게 */
+    transition: 0.5s;  /* 전환 효과 지속 시간 */
+    user-select: none;  /* 텍스트 선택 비활성화 */
+  }
+   /* 선택했을 때 색상 */
+  .row2 label input[type="checkbox"]:checked ~ .icon-box2 {
+    background:#e6aa50;  /* 배경색 */
+    color: #f9f6f2;  /* 글자색 */
+  }
+  .row2 label .icon-box2 span {
+    margin: 0px;  /* 내부 여백 */
+    font-size: 15px;  /* 폰트 크기 */
+  }
+
+/* --------------------------------나머지 필터-------------------------------- */
+.container3 h1 {
+    font-size: 20px;
+    line-height: 30px;
+    color: #373131;
+    position: relative;
+}
+
+/* 유형 한 줄로 */
+.container3, .container3 input[type="checkbox"], .container3 h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* 간격 조절 */
+}
+.container3, .container3 input[type="range"], .container3 h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px; /* 간격 조절 */
+}
+
+/* --------------------------------필터 적용 버튼-------------------------------- */
+.button {
+    width: 100px;
+    height: 40px;
+}

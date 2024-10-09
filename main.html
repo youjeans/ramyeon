@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<style>
+        #buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        #buttons button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #F5F5DC;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #buttons button:hover {
+            background-color: #D2B48C;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <link rel="stylesheet" type="text/css" href="filter.css">
+    <title>데이터베이스 2조 Ramyun Search</title>
+</head>
+
+<body>
+
+    <!--로고와 검색창-->
+    <header>
+        <div id="header-container">
+            <img src="https://cdn-icons-png.flaticon.com/512/638/638507.png" width="70">
+            <form action="search.php" method="post">
+                <input type="text" id="ramyunName" name="ramyunName" placeholder=" 라면 이름을 입력하시오">
+                <button type="submit" id="search-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/149/149852.png" alt="검색">
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <!-- 필터링 창 -->
+    <section id="filter">
+        <hr class="one"> <!-- 선 -->
+        <form action="filter.php" method="post" id="filter-box">
+
+            <!-- 라면 종류 -->
+            <div class="container1-type">
+                <h1 style="display: inline">라면 종류</h1>
+                <div class="row1">
+                    <!-- Your existing checkboxes -->
+                    <!-- ... -->
+                </div>
+            </div>
+            <!-- 유형 -->
+            <div class="container3">
+                <h1 style="display: inline">유형</h1>
+                <input style="zoom:1.3;" type="checkbox" name="cup" value="1">컵라면
+                <input style="zoom:1.3;" type="checkbox" name="dry" value="1">건면
+            </div>
+            <!-- 칼로리 -->
+            <div class="container3">
+                <h1 style="display: inline">칼로리</h1>
+                <input type="range" id="calories" name="calories" min="100" max="600" step="50" value="350">
+                <output for="calories" id="caloriesOutput"> kcal</output>
+                <style>
+                    #caloriesOutput::before {
+                        content: attr(data-value);
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+                </style>
+            </div>
+            <!-- 알러지 성분 -->
+            <div class="container2-allergy">
+                <h1 style="display: inline">제외할 성분</h1>
+                <div class="row2">
+                    <!-- Your existing checkboxes -->
+                    <!-- ... -->
+                </div>
+
+                <div class="row2">
+<label>
+                    <input type="checkbox" name="allergies[]" value="알류">
+                    <div class="icon-box2">
+                      <span>알류</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="우유">
+                    <div class="icon-box2">
+                      <span>우유</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="메밀">
+                    <div class="icon-box2">
+                      <i class="fa fa-imdb" aria-hidden="true"></i>
+                      <span>메밀</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="땅콩">
+                    <div class="icon-box2">
+                      <span>땅콩</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="대두">
+                    <div class="icon-box2">
+                      <span>대두</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="밀">
+                    <div class="icon-box2">
+                      <span>밀</span>
+                    </div>
+                  </label>
+
+                  <label>
+                    <input type="checkbox" name="allergies[]" value="게">
+                    <div class="icon-box2">
+                      <span>게</span>
+                    </div>
+                  </label>
+
+                </div>
+                
+                <div class="row2">
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="우유">
+                      <div class="icon-box2">
+                        <span>새우</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="오징어">
+                      <div class="icon-box2">
+                        <span>오징어</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="조개류">
+                      <div class="icon-box2">
+                        <i class="fa fa-imdb" aria-hidden="true"></i>
+                        <span>조개류</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="토마토">
+                      <div class="icon-box2">
+                        <span>토마토</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="닭고기">
+                      <div class="icon-box2">
+                        <span>닭고기</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="돼지고기">
+                      <div class="icon-box2">
+                        <span>돼지고기</span>
+                      </div>
+                    </label>
+  
+                    <label>
+                      <input type="checkbox" name="allergies[]" value="쇠고기">
+                      <div class="icon-box2">
+                        <span>쇠고기</span>
+                      </div>
+                    </label>
+
+                </div>
+            </div>
+
+            <input type="submit" value="필터 적용" class="button">
+        </form>
+    </section>
+
+    <!-- Add buttons -->
+    <section id="buttons">
+        <button onclick="redirectTo('demo_pro.php')">단백질 정렬</button>
+        <button onclick="redirectTo('demo_na.php')">나트륨 정렬</button>
+        <button onclick="redirectTo('demo_kcal.php')">칼로리 정렬</button>
+        <button onclick="redirectTo('demo_fat.php')">지방 정렬</button>
+        <button onclick="redirectTo('demo_ca.php')">탄수화물 정렬</button>
+        <button onclick="redirectTo('demo_company.php')">제조사별 리스트</button>
+        <button onclick="redirectTo('demo_allergy.php')">알러지 포함 라면 리스트</button>
+        <button onclick="redirectTo('demo_chol.php')">콜레스테롤 정렬</button>
+    </section>
+
+    <!--검색 결과창 -->
+    <section id="results">
+
+    </section>
+
+    <!-- 슬라이더에서 초기값 나오도록 -->
+    <script>
+        var slider = document.getElementById("calories");
+        var output = document.getElementById("caloriesOutput");
+        output.setAttribute("data-value", slider.value);
+        slider.addEventListener("input", function() {
+            output.setAttribute("data-value", this.value);
+        });
+
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+
+</html>
